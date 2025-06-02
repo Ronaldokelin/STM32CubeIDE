@@ -1,0 +1,12 @@
+10:21:45 **** Incremental Build of configuration Debug for project SQT1Test ****
+make -j24 all 
+arm-none-eabi-size  SQT1Test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4944	     12	   1572	   6528	   1980	SQT1Test.elf
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy -O ihex SQT1Test.elf SQT1Test.hex
+ 
+
+10:21:46 Build Finished. 0 errors, 0 warnings. (took 888ms)
+

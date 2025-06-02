@@ -1,0 +1,92 @@
+11:58:41 **** Incremental Build of configuration Debug for project Primeiro ****
+make all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I"C:/Users/rkelin/Desktop/Pessoal/en.stm32cubef1-v1-8-6/STM32Cube_FW_F1_V1.8.0" -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:106:15: warning: implicit declaration of function 'USART_GetFlagStatus' [-Wimplicit-function-declaration]
+  106 |           if (USART_GetFlagStatus(USART1, USART_FLAG_RXNE)) {
+      |               ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:106:43: error: 'USART_FLAG_RXNE' undeclared (first use in this function); did you mean 'UART_FLAG_RXNE'?
+  106 |           if (USART_GetFlagStatus(USART1, USART_FLAG_RXNE)) {
+      |                                           ^~~~~~~~~~~~~~~
+      |                                           UART_FLAG_RXNE
+../Core/Src/main.c:106:43: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:107:28: warning: implicit declaration of function 'USART_ReceiveData' [-Wimplicit-function-declaration]
+  107 |                   char c = USART_ReceiveData(USART1);
+      |                            ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:109:24: warning: character constant too long for its type
+  109 |                   case 'OUT_OFF':
+      |                        ^~~~~~~~~
+../Core/Src/main.c:110:27: warning: implicit declaration of function 'HAL_GPIO_ResetBits'; did you mean 'HAL_GPIO_ReadPin'? [-Wimplicit-function-declaration]
+  110 |                           HAL_GPIO_ResetBits(GPIOC, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3);
+      |                           ^~~~~~~~~~~~~~~~~~
+      |                           HAL_GPIO_ReadPin
+../Core/Src/main.c:110:53: error: 'GPIO_Pin_0' undeclared (first use in this function); did you mean 'GPIO_PIN_0'?
+  110 |                           HAL_GPIO_ResetBits(GPIOC, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3);
+      |                                                     ^~~~~~~~~~
+      |                                                     GPIO_PIN_0
+../Core/Src/main.c:110:66: error: 'GPIO_Pin_1' undeclared (first use in this function); did you mean 'GPIO_PIN_1'?
+  110 |                           HAL_GPIO_ResetBits(GPIOC, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3);
+      |                                                                  ^~~~~~~~~~
+      |                                                                  GPIO_PIN_1
+../Core/Src/main.c:110:79: error: 'GPIO_Pin_2' undeclared (first use in this function); did you mean 'GPIO_PIN_2'?
+  110 |                           HAL_GPIO_ResetBits(GPIOC, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3);
+      |                                                                               ^~~~~~~~~~
+      |                                                                               GPIO_PIN_2
+../Core/Src/main.c:110:92: error: 'GPIO_Pin_3' undeclared (first use in this function); did you mean 'GPIO_PIN_3'?
+  110 |                           HAL_GPIO_ResetBits(GPIOC, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3);
+      |                                                                                            ^~~~~~~~~~
+      |                                                                                            GPIO_PIN_3
+../Core/Src/main.c:112:24: warning: character constant too long for its type
+  112 |                   case 'OUT_1':
+      |                        ^~~~~~~
+../Core/Src/main.c:113:27: warning: implicit declaration of function 'HAL_GPIO_SetBits'; did you mean 'HAL_GPIO_DeInit'? [-Wimplicit-function-declaration]
+  113 |                           HAL_GPIO_SetBits(GPIOC, GPIO_Pin_0);
+      |                           ^~~~~~~~~~~~~~~~
+      |                           HAL_GPIO_DeInit
+../Core/Src/main.c:115:24: warning: character constant too long for its type
+  115 |                   case 'OUT_2':
+      |                        ^~~~~~~
+../Core/Src/main.c:118:24: warning: character constant too long for its type
+  118 |                   case 'OUT_3':
+      |                        ^~~~~~~
+../Core/Src/main.c:121:24: warning: character constant too long for its type
+  121 |                   case 'OUT_4':
+      |                        ^~~~~~~
+../Core/Src/main.c:112:19: warning: case label value exceeds maximum value for type [-Wswitch-outside-range]
+  112 |                   case 'OUT_1':
+      |                   ^~~~
+../Core/Src/main.c:115:19: warning: case label value exceeds maximum value for type [-Wswitch-outside-range]
+  115 |                   case 'OUT_2':
+      |                   ^~~~
+../Core/Src/main.c:118:19: warning: case label value exceeds maximum value for type [-Wswitch-outside-range]
+  118 |                   case 'OUT_3':
+      |                   ^~~~
+../Core/Src/main.c:121:19: warning: case label value exceeds maximum value for type [-Wswitch-outside-range]
+  121 |                   case 'OUT_4':
+      |                   ^~~~
+../Core/Src/main.c:109:19: warning: case label value exceeds maximum value for type [-Wswitch-outside-range]
+  109 |                   case 'OUT_OFF':
+      |                   ^~~~
+../Core/Src/main.c:128:39: warning: implicit declaration of function 'GPIO_ReadInputData' [-Wimplicit-function-declaration]
+  128 |             uint8_t estado_sensores = GPIO_ReadInputData(GPIOB);
+      |                                       ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:137:13: warning: implicit declaration of function 'delay_ms' [-Wimplicit-function-declaration]
+  137 |             delay_ms(100);
+      |             ^~~~~~~~
+../Core/Src/main.c:132:21: warning: unused variable 'sensor15' [-Wunused-variable]
+  132 |             uint8_t sensor15 = (estado_sensores & (1 << 15)) != 0;
+      |                     ^~~~~~~~
+../Core/Src/main.c:131:21: warning: unused variable 'sensor14' [-Wunused-variable]
+  131 |             uint8_t sensor14 = (estado_sensores & (1 << 14)) != 0;
+      |                     ^~~~~~~~
+../Core/Src/main.c:130:21: warning: unused variable 'sensor13' [-Wunused-variable]
+  130 |             uint8_t sensor13 = (estado_sensores & (1 << 13)) != 0;
+      |                     ^~~~~~~~
+../Core/Src/main.c:129:21: warning: unused variable 'sensor12' [-Wunused-variable]
+  129 |             uint8_t sensor12 = (estado_sensores & (1 << 12)) != 0;
+      |                     ^~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+
+11:58:42 Build Failed. 6 errors, 20 warnings. (took 889ms)
+

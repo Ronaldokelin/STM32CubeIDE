@@ -1,0 +1,22 @@
+12:18:59 **** Incremental Build of configuration Debug for project ARM GCC ****
+make -j24 all 
+arm-none-eabi-gcc -o "ARM GCC.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\rkelin\STM32CubeIDE\workspace_1.17.0\ARM GCC\STM32F103RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ARM GCC.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ARM GCC.elf
+ 
+arm-none-eabi-size  ARM\ GCC.elf 
+arm-none-eabi-objdump -h -S ARM\ GCC.elf  > "ARM GCC.list"
+arm-none-eabi-objcopy  -O ihex ARM\ GCC.elf  "ARM GCC.hex"
+   text	   data	    bss	    dec	    hex	filename
+   3728	     12	   1572	   5312	   14c0	ARM GCC.elf
+arm-none-eabi-objcopy  -O binary ARM\ GCC.elf  "ARM GCC.bin"
+Finished building: default.size.stdout
+ 
+Finished building: ARM GCC.list
+ 
+Finished building: ARM GCC.hex
+Finished building: ARM GCC.bin
+ 
+ 
+
+12:19:00 Build Finished. 0 errors, 0 warnings. (took 1s.135ms)
+

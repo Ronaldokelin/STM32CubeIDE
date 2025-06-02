@@ -1,0 +1,23 @@
+15:13:40 **** Incremental Build of configuration Debug for project UAOP ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -IC:/Users/rkelin/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.6/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -IC:/Users/rkelin/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.6/Drivers/STM32F1xx_HAL_Driver/Inc -IC:/Users/rkelin/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.6/Drivers/CMSIS/Device/ST/STM32F1xx/Include -IC:/Users/rkelin/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.6/Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "UAOP.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\rkelin\STM32CubeIDE\workspace_1.17.0\UAOP\STM32F103RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UAOP.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UAOP.elf
+ 
+arm-none-eabi-size  UAOP.elf 
+arm-none-eabi-objdump -h -S UAOP.elf  > "UAOP.list"
+arm-none-eabi-objcopy  -O ihex UAOP.elf  "UAOP.hex"
+   text	   data	    bss	    dec	    hex	filename
+  12692	    140	   2044	  14876	   3a1c	UAOP.elf
+arm-none-eabi-objcopy  -O binary UAOP.elf  "UAOP.bin"
+Finished building: default.size.stdout
+ 
+Finished building: UAOP.hex
+Finished building: UAOP.list
+ 
+Finished building: UAOP.bin
+ 
+ 
+
+15:13:42 Build Finished. 0 errors, 0 warnings. (took 1s.769ms)
+
